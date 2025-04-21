@@ -4,14 +4,59 @@
   <meta charset="UTF-8">
   <title>Snake Game</title>
   <style>
-    body { margin: 0; }
-    canvas { display: block; margin: auto; }
+    body {
+      margin: 0;
+      background-color: #111;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    #score {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      z-index: 1;
+    }
+
+    #gameOver {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: red;
+      display: none;
+      text-align: center;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #00aa00;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <!-- Nạp thư viện Phaser -->
+  <div id="score">Score: 0</div>
+  <div id="gameOver">
+    <div>Game Over</div>
+    <button onclick="location.reload()">Chơi lại</button>
+  </div>
+
+  <!-- Phaser -->
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>
-  <!-- Nạp mã game -->
+  <!-- Game -->
   <script src="snake.js"></script>
 </body>
 </html>
